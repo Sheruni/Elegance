@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+    <head><title>Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheet4.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+             <script>
+
+        function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+        
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+            </script>
+
+    </head>
+    
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <div class="student">STUDENT 3<br>Editor: Sandunika Balachandra<br>
+  Student ID:2019309<br><p>Tasks Completed:<br>Javascript Quiz<br>Student Details</p></div>
+  </div>
+</div>
+
+ <div class="icon-bar">
+ <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+</div>
+    
+
+<img src="logo_transparent1.png" height="79px" width="80px" style="display: block;margin-left: auto;margin-right:auto;">
+<img src="logo_transparent2.png" height="68px" width="190px"  style="display: block;margin-left: auto;margin-right:auto;">
+<img src="unnamed.png" height="40px" width="150px" style="display: block;margin-left: auto;margin-right:auto;">
+<br>
+<div class="navbar">
+<a href="homepageview.html" >Home</a>
+<a href="New Arrivals.html">New Arrivals</a>
+<a href="Shop Online.html" >Shop Online</a>
+ <a href="Take Quiz.html" class="active">Take Quiz</a>
+   <div class="dropdown">
+    <button class="dropbtn">Fashion Timeline
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     <a href="19century.html">19th Century</a>
+      <a href="20century.html">20th Century</a>
+      <a href="21century.html">21st Century</a>
+    </div>
+  </div> 
+ <a href="Our Members.html">Our Members</a>
+ <a href="Send Feedback.html">Send Feedback</a>
+</div>
+<div class="content">
+
+ <div class="slideshow-container">
+
+    <div class="grid fade">
+        <center><img src="quiz_logo.jpg" style="width:70%"></center>
+        <div class='start-container slide-container'>
+            <center><button id="start">START</button></center>
+        </div>
+        
+        <hr style="margin-top: 50px">        
+        <footer>
+            <center><p id="timer-label" class='label'>Timer</p></center>
+        </footer>
+    </div>      
+    <div class="grid fade">
+        <div id="quiz">
+            <h1>Quiz Time</h1>
+            <hr style="margin-bottom: 20px">
+
+            <p id="question"></p>
+
+            <div class="buttons">
+                <button id="btn0"><span id="choice0"></span></button>
+                <button id="btn1"><span id="choice1"></span></button>
+                <button id="btn2"><span id="choice2"></span></button>
+                <button id="btn3"><span id="choice3"></span></button>
+            </div>
+            <hr style="margin-top: 50px">
+            <footer><center>
+                <p id="progress">Question x of y</p>
+                <p id="timer-label-2" class='label'>Timer</p></center>
+            </footer>
+        </div>
+    </div>
+    <div class="grid fade">
+        <div class='score-container'>
+            <p class='label'>SCORE</p>
+            <p id="score" class='main'></p>
+            <p id="answers" class='label'>Answer</p>            
+        </div>
+        <hr style="margin-top: 50px">
+        <footer>
+        </footer>        
+    </div>
+    
+<script src="question.js"></script>
+
+
+<div id="right-bottom"><span style="font-size:20px;cursor:pointer;position:fixed;bottom:20px;right:20px;color:#fbfae2;" onclick="openNav()">&#9776; Page Editor</span>
+</div>
+
+</div>
+  </div>
+<div  class="footer">
+        <br>
+        <span><center>CONNECT WITH US:<font size="5px">
+        <a href="#" id="social" class="fa fa-facebook"></a>
+        <a href="#" id="social" class="fa fa-twitter"></a>
+        <a href="#" id="social" class="fa fa-google"></a>
+        <a href="#" id="social" class="fa fa-linkedin"></a>
+        <a href="#" id="social" class="fa fa-youtube"></a></font></center></span>
+       <span><br>
+        Need Help?<br>Call Us:<br>0765408855<br><br>
+        General Enquiries:<br>elegancesss@hotmail.com</span>
+        <span><br><br>
+        Get updates directly to your inbox:
+        <input type="text" style="width:200px;"name="signup" ><input type="button" class="submit" value="SignUp"><br><br>
+    
+        &copy; 2020 ELEGANCE COMPANY.ALL RIGHTS RESERVED.<br><br>
+        Sitemap  |   Private Policy  |  Terms &#38; Conditions
+        </span>
+
+</div>
+  
+    </body>
+</html>
+    

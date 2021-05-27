@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head><title>Send Feedback</title>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheet6.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+             <script>
+
+        function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+        
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+            </script>
+
+    </head>
+    
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <div class="student"> STUDENT 2<br>Editor: Sanali Ariyaratne<br>
+  Student ID:2019304<br><p>Tasks Completed:<br>Main Page<br>Comments Form<br>External CSS</p></div>
+  </div>
+</div>
+
+ <div class="icon-bar">
+ <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+</div>
+    
+
+<img src="logo_transparent1.png" height="79px" width="80px" style="display: block;margin-left: auto;margin-right:auto;">
+<img src="logo_transparent2.png" height="68px" width="190px"  style="display: block;margin-left: auto;margin-right:auto;">
+<img src="unnamed.png" height="40px" width="150px" style="display: block;margin-left: auto;margin-right:auto;">
+<br>
+<div  class="navbar">
+<a href="homepageview.html" >Home</a>
+<a href="New Arrivals.html"  >New Arrivals</a>
+<a href="Shop Online.html" >Shop Online</a>
+ <a href="Take Quiz.html">Take Quiz</a>
+   <div class="dropdown">
+    <button class="dropbtn">Fashion Timeline
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     <a href="19century.html">19th Century</a>
+      <a href="20century.html">20th Century</a>
+      <a href="21century.html">21st Century</a>
+    </div>
+  </div> 
+ <a href="Our Members.html">Our Members</a>
+ <a href="Send Feedback.html" class="active">Send Feedback</a>
+</div>
+
+<div class="container">
+  <form name="feedback form" onsubmit="return validateForm()" method="post" >
+  <h3>Feedback Form</h3>
+    <label for="fname">Name:</label>
+    <input type="text" id="username" name="username" placeholder="Your name..">
+
+    <label for="lname">E-mail:</label>
+    <input type="text" id="lname" name="Email" placeholder="Your Email" >
+
+    <label for="country">Comments:</label>
+    <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px" ></textarea>
+
+  <label for="country">Rate our Website : </label>&nbsp;
+    <input type="radio" id="rate" name="rate" value ="Excellent">
+	<label for="Rate">Excellent  &#128525;</label>
+	<input type="radio" id="rate" name="rate" value ="Good">
+	<label for="Rate">Good  &#128516;</label>
+	<input type="radio" id="rate" name="rate" value ="Bad">
+	<label for="Rate">Bad  &#128533;</label>
+	<input type="radio" id="rate" name="rate" value ="Worst">
+	<label for="Rate">Worst  &#128530;</label>
+	<br>
+<br>
+   <center> <input type="submit" value="Submit"></center>
+  </form>
+
+<br>
+<div id="right-bottom"><span style="font-size:20px;cursor:pointer;position:fixed;bottom:20px;right:20px;color:#fbfae2;" onclick="openNav()">&#9776; Page Editor</span>
+</div>
+
+</div>
+<div  class="footer">
+        <br>
+        <span><center>CONNECT WITH US:<font size="5px">
+        <a href="#" id="social" class="fa fa-facebook"></a>
+        <a href="#" id="social" class="fa fa-twitter"></a>
+        <a href="#" id="social" class="fa fa-google"></a>
+        <a href="#" id="social" class="fa fa-linkedin"></a>
+        <a href="#" id="social" class="fa fa-youtube"></a></font></center></span>
+       <span><br>
+        Need Help?<br>Call Us:<br>0765408855<br><br>
+        General Enquiries:<br>elegancesss@hotmail.com</span>
+        <span><br><br>
+        Get updates directly to your inbox:
+        <input type="text" style="width:200px;"name="signup" ><input type="button" class="submit" value="SignUp"><br><br>
+    
+        &copy; 2020 ELEGANCE COMPANY.ALL RIGHTS RESERVED.<br><br>
+        Sitemap  |   Private Policy  |  Terms &#38; Conditions
+        </span>
+
+     
+</div>
+<script>
+function validateForm() {
+  var z = document.getElementById("comment").value;
+  var x = document.forms["feedback form"]["username"].value;
+
+  if (x == "") {
+    alert("Name should be filled out!");
+    return false;}
+ 
+  var radios = document.getElementsByName("rate");
+		for (var i = 0, len = radios.length; i < len; i++) {
+          if (radios[i].checked) {
+		   var y=radios[i].value;
+		   alert("Dear "+x+", Thank You For Your Feedback! You have rated our site as "+y+" and your commment was "+z+".");
+              return true;
+          }
+     }
+
+      alert("No rating is given!");
+    return false;  
+}
+</script>
+</body>
+</html>
+    
+
+    

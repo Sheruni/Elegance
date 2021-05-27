@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+<html>
+    <head><title>Shop Online</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheet3.css">
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+             <script>
+
+        function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+        
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+        
+        
+        function tocart(name,price){
+        if(document.getElementById("textbox1").value=="" ){
+            document.getElementById("textbox1").value=name;
+         document.getElementById("price1").value=price;
+         
+    
+         
+        }else if(document.getElementById("textbox2").value==""){
+        document.getElementById("textbox2").value=name; 
+         document.getElementById("price2").value=price;  
+    
+        
+        }else if(document.getElementById("textbox3").value==""){
+        document.getElementById("textbox3").value=name;
+         document.getElementById("price3").value=price;  
+
+        
+         }else if(document.getElementById("textbox4").value==""){
+        document.getElementById("textbox4").value=name;
+         document.getElementById("price4").value=price;  
+
+        }else{
+            alert("Only 4 maximum items are allowed!");
+        }
+        
+        var result=0;
+         
+        var val1=document.getElementById("price1").value;
+        var val2=  document.getElementById("price2").value;
+        var val3=  document.getElementById("price3").value;
+        var val4=  document.getElementById("price4").value;
+             if (val1 == "")val1= 0;
+             if (val2 == "")val2= 0;
+             if (val3== "")val3= 0;
+             if (val4== "")val4= 0;
+
+        result = parseInt(val1)+parseInt(val2)+parseInt(val3)+parseInt(val4);
+        document.getElementById("total").value=result;
+        
+        }
+        
+    function emptycart(){
+        
+          document.getElementById("textbox1").value=""; 
+        document.getElementById("price1").value="";  
+          document.getElementById("textbox2").value=""; 
+        document.getElementById("price2").value="";  
+          document.getElementById("textbox3").value=""; 
+        document.getElementById("price3").value="";  
+          document.getElementById("textbox4").value=""; 
+        document.getElementById("price4").value="";  
+        document.getElementById("total").value="";
+        
+    }
+    
+    function calculatetotal(){
+           var price1= document.getElementById("price1").value;
+           var price2= document.getElementById("price2").value;
+           var price3= document.getElementById("price3").value;
+           var price4= document.getElementById("price4").value;
+           
+             var q1=  document.getElementById("quantity1").value;
+             var q2=     document.getElementById("quantity2").value;
+             var q3=     document.getElementById("quantity3").value;
+             var q4=     document.getElementById("quantity4").value;
+             
+             if (price1 == "")price1= 0;
+             if (price2 == "")price2= 0;
+             if (price3== "")price3= 0;
+             if (price4== "")price4= 0;
+             
+             
+             var final1=price1*q1;
+             var final2=price2*q2;
+             var final3=price3*q3;
+             var final4=price4*q4;
+             
+             var result=parseInt(final1)+parseInt(final2)+parseInt(final3)+parseInt(final4);
+             document.getElementById("total").value=result;
+          
+    }
+    
+    function order(){
+   var x=document.getElementById("fname").value;
+   if(x==""){
+       alert("Name should be filled!");
+       return false;
+      }
+    var y=document.getElementById("sname").value;
+   if(y==""){
+       alert("Sur Name should be filled!");
+       return false;
+      }
+    var e=document.getElementById("email").value;
+   if(e==""){
+       alert("Email should be filled!");
+       return false;
+      }
+    var z=document.getElementById("cnumber").value;
+   if(z==""){
+       alert("Card Number should be filled!");
+       return false;
+      }
+
+      
+     var price1= document.getElementById("price1").value;
+      var price2= document.getElementById("price2").value;
+       var price3= document.getElementById("price3").value;      
+        var price4= document.getElementById("price4").value; 
+        var total= document.getElementById("total").value;
+        
+            var text1;
+            var text2;
+            var text3;
+            var text4;
+            var fname=document.getElementById("fname").value;
+            var sname=document.getElementById("sname").value;
+        
+        if(total!=""){
+            
+            
+         if (price1 != ""){
+          var item1=document.getElementById("textbox1").value;
+          var q1 = document.getElementById("quantity1").value;
+          var size1 = document.getElementById("size1").value;
+          text1=q1+" "+size1+" sized "+item1;  
+          }else{text1="";}
+        
+         if (price2 != ""){
+      
+            var q2 = document.getElementById("quantity2").value;
+           var item2=document.getElementById("textbox2").value;
+            var size2 = document.getElementById("size2").value;
+            text2=q2+" "+size2+" sized "+item2;              
+                    }else{ text2="";}
+        
+           if (price3!= ""){        
+                var item3=document.getElementById("textbox3").value;
+                var q3 = document.getElementById("quantity3").value;
+                var size3 = document.getElementById("size3").value;
+                text3=q3+" "+size3+" sized "+item3;  
+              }else{text3="";}
+         
+          if (price4!= ""){        
+            var item4=document.getElementById("textbox4").value;
+            var q4 = document.getElementById("quantity4").value;
+            size4 = document.getElementById("size4").value;
+            var text4=q4+" "+size4+" sized "+item4;  
+
+       }else{ text4="";}
+       
+        alert("Your order has been requsted successfully! \nOrder Details:\nCustomer name: " +fname+" "+sname+"\nItems:\n"+text1+"\n"+text2+"\n"+text3+"\n"+text4+"\nTotal amount:  Rs. " + total+ ".00");
+
+       }
+       
+       else{
+            alert("Cart is Empty!");          }        
+}
+
+
+        
+            </script>
+
+    </head>
+    
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <div class="student"> STUDENT 1<br>Editor: Sheruni Fernando<br>
+    Student ID:2019322<p><br>Tasks Completed:<br>Presentation Page<br>Font Size Change<br>Buy Products Page<br>New Arrivals</p></div>
+    </div>
+  </div>
+</div>
+
+ <div class="icon-bar">
+ <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+</div>
+    
+
+<img src="logo_transparent1.png" height="79px" width="80px" style="display: block;margin-left: auto;margin-right:auto;">
+<img src="logo_transparent2.png" height="68px" width="190px"  style="display: block;margin-left: auto;margin-right:auto;">
+<img src="unnamed.png" height="40px" width="150px" style="display: block;margin-left: auto;margin-right:auto;">
+<br>
+<div class="navbar">
+<a href="homepageview.html" >Home</a>
+<a href="New Arrivals.html">New Arrivals</a>
+<a href="Shop Online.html" class="active">Shop Online</a>
+ <a href="Take Quiz.html">Take Quiz</a>
+   <div class="dropdown">
+    <button class="dropbtn">Fashion Timeline
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="19century.html">19th Century</a>
+      <a href="20century.html">20th Century</a>
+      <a href="21century.html">21st Century</a>
+    </div>
+  </div> 
+ <a href="Our Members.html">Our Members</a>
+ <a href="Send Feedback.html">Send Feedback</a>
+</div>
+
+<div class="content">
+
+<div class="container">
+
+<div class="tab">
+  <button class="tablinks" onclick="openGallery(event, 'casual')" id="defaultOpen">Casual</button>
+  <button class="tablinks" onclick="openGallery(event, 'dresses')">Dresses</button>
+  <button class="tablinks" onclick="openGallery(event, 'formal')">Formal Wear</button>
+  <button class="tablinks" onclick="openGallery(event, 'party')">Party Wear</button>
+  <button class="tablinks" onclick="openGallery(event, 'tops')">Tops</button>
+</div>
+
+<div id="casual" class="tabcontent">
+
+ <div class="gallery1">
+
+                <figure class="gallery__item--1">
+                    <div class="icon-overlay"></div>
+                    <img src="bat sleeve loose casual ladies.jpg" alt="Gallery image 1" class="gallery1__img">
+                    <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">Bat Sleeve Blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.3500.00</p>
+                    <br><button class="cart"  onclick="tocart('Bat Sleeve Blouse','3500.00')" >Add to Cart</button>
+                    </div>
+                </figure>
+               
+                <figure class="gallery__item--2">
+                    <div class="icon-overlay"></div>
+                    <img src="british fencing lifestyle .jpg" alt="Gallery image 2" class="gallery1__img">
+                    <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">British Fencing Style T-Shirt</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3260.00</p>
+                     <br><button class="cart" onclick="tocart('British Fencing Style T-Shirt','3260.00')" >Add to Cart</button>
+                    </div>
+                </figure>
+                
+                <figure class="gallery__item--3">
+                    <div class="icon-overlay"></div>
+                    <img src="casual v neck vintage white blue striped shirt.jpg" alt="Gallery image 3" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">V neck vintage Striped shirt</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.4800.00</p>
+                     <br><button class="cart" onclick="tocart('V neck vintage Striped shirt','4800.00')">Add to Cart</button>
+                    </div>
+ 
+                </figure>
+                
+                <figure class="gallery__item--4">
+                <div class="icon-overlay"></div>
+                    <img src="frilled floral cold shoulder bliuse.jpg" alt="Gallery image 4" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">Frilled floral off shoulder blouse</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.3300.00</p>
+                     <br><button class="cart" onclick="tocart('Frilled floral off shoulder blouse','3300.00')">Add to Cart</button>
+                    </div>
+     
+                     </figure>
+                     
+                <figure class="gallery__item--5">
+                <div class="icon-overlay"></div>
+                    <img src="flounced dress.jpg" alt="Gallery image 5" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">flounced dress</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.5260.00</p>
+                     <br><button class="cart" onclick="tocart('flounced dress','5260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                
+                <figure class="gallery__item--6">
+                <div class="icon-overlay"></div>
+                    <img src="gentle gym tshirt.jpg" alt="Gallery image 6" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">light blue gym tshirt</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.2060.00</p>
+                     <br><button class="cart" onclick="tocart('light blue gym tshirt','2060.00')">Add to Cart</button>
+                    </div>
+  
+                </figure>
+                <figure class="gallery__item--7">
+                <div class="icon-overlay"></div>
+                    <img src="jules floral blouse.jpg" alt="Gallery image 7" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">Floral Blouse</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs3100.00</p>
+                     <br><button class="cart" onclick="tocart('Floral Blouse','3100.00')">Add to Cart</button>
+                    </div>
+
+                </figure>
+                <figure class="gallery__item--8">
+                <div class="icon-overlay"></div>
+                    <img src="pasadena polo shirt forest green.jpg" alt="Gallery image 8" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">pasadena polo tshirt</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L,M<br>Price : Rs.2900.00</p>
+                     <br><button class="cart" onclick="tocart('pasadena polo tshirt','2900.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--9">
+                <div class="icon-overlay"></div>
+                    <img src="pink round neck tshirt.jpg" alt="Gallery image 9" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">pink round neck tshirt</h3>
+                    <p class="icon-text">Sizes :L,M<br>Price : Rs.1650.00</p>
+                     <br><button class="cart" onclick="tocart('pink round neck tshirt','1650.00')">Add to Cart</button>
+                    </div>
+                   
+                </figure>
+                <figure class="gallery__item--10">
+                    <div class="icon-overlay"></div>
+                    <img src="Polo shirt navy blue.jpg" alt="Gallery image 10" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">polo navy blue tshirt</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.2100.00</p>
+                     <br><button class="cart" onclick="tocart('polo navy blue tshirt','2100.00')">Add to Cart</button>
+                    </div>
+                
+                </figure>
+                <figure class="gallery__item--11">
+                <div class="icon-overlay"></div>
+                    <img src="summer casual cropped sleeve.jpg" alt="Gallery image 11" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">summer cropped sleeve denim top</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3800.00</p>
+                     <br><button class="cart" onclick="tocart('summer cropped sleeve denim top','3800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--12">
+                <div class="icon-overlay"></div>
+                    <img src="black casual dress.jpg" alt="Gallery image 12" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">haloween black dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3260.00</p>
+                     <br><button class="cart" onclick="tocart('haloween black dress','3260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                 <figure class="gallery__item--13">
+                 <div class="icon-overlay"></div>
+                    <img src="floral print casual dress.jpg" alt="Gallery image 13" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">floral print black dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.3700.00</p>
+                     <br><button class="cart" onclick="tocart('floral print black dress','3700.00')">Add to Cart</button>
+                    </div>
+                    
+                </figure>
+                <figure class="gallery__item--14">
+                <div class="icon-overlay"></div>
+                    <img src="casual huf and dee.jpg" alt="Gallery image 14" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">huf and dee checked dress</h3>
+                    <p class="icon-text">Sizes :L,M,S<br>Price : Rs.4100.00</p>
+                     <br><button class="cart" onclick="tocart('huf and dee checked dress','4100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--15">
+                <div class="icon-overlay"></div>
+                    <img src="Simplee-Elegant-button-women-dress-Pocket-polka-dots-yellow-cotton-midi-dress-Summer-casual-female-plus.jpg" alt="Gallery image 15" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">yellow cotton summer dress</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L,M<br>Price : Rs.2800.00</p>
+                     <br><button class="cart" onclick="tocart('yellow cotton summer dress','2800.00')">Add to Cart</button>
+                    </div>
+                    
+                </figure>
+                <figure class="gallery__item--16">
+                <div class="icon-overlay"></div>
+                    <img src="spaghetti strap sunflower print mini dress.jpg" alt="Gallery image 16" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">sunflower print mini dress</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.3220.00</p>
+                     <br><button class="cart" onclick="tocart('sunflower print mini dress','3220.00')">Add to Cart</button>
+                    </div>
+                </figure>
+            </div>
+
+</div>
+
+<div id="dresses" class="tabcontent">
+<div class="gallery2">
+            
+                <figure class="gallery__item--1">
+                <div class="icon-overlay"></div>
+                    <img src="alexander vauthier v neck draped yellow dress.jpg" alt="Gallery image 1" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">v neck draped yellow dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.5210.00</p>
+                     <br><button class="cart" onclick="tocart('v neck draped yellow dress','5210.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--2">
+                <div class="icon-overlay"></div>
+                    <img src="cavalli long dress.jpg" alt="Gallery image 2" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">cavalli pink long dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.5180.00</p>
+                     <br><button class="cart" onclick="tocart('cavalli pink long dress','5180.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--3">
+                <div class="icon-overlay"></div>
+                    <img src="Classy casual belted vintage retro swing dress.jpg" alt="Gallery image 3" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">classy belted retro swing dress</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.4800.00</p>
+                     <br><button class="cart" onclick="tocart('classy belted retro swing dress','4800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--4">
+                <div class="icon-overlay"></div>
+                    <img src="classychiffon beaded one shoulder prom cocktail dress.jpg" alt="Gallery image 4" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">chiffon beaded one shoulder prom dress</h3>
+                    <p class="icon-text">Sizes : M<br>Price : Rs.8260.00</p>
+                     <br><button class="cart" onclick="tocart('chiffon beaded one shoulder prom dress','8260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--5">
+                <div class="icon-overlay"></div>
+                    <img src="crepe maxi dress.jpg" alt="Gallery image 5" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">crepe maxi</h3>
+                    <p class="icon-text">Sizes :M,S<br>Price : Rs.3110.00</p>
+                     <br><button class="cart" onclick="tocart('crepe maxi','3110.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--6">
+                <div class="icon-overlay"></div>
+                    <img src="fairy couple off shpulder lace vintage part cocktail.jpg" alt="Gallery image 6" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">fairy off shoulder white vintage dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.2630.00</p>
+                     <br><button class="cart" onclick="tocart('fairy off shoulder white vintage dress','2630.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--7">
+                <div class="icon-overlay"></div>
+                    <img src="lace up empire waist dip hem dress.jpg" alt="Gallery image 7" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">empire waist dip hem lace dress</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.5860.00</p>
+                     <br><button class="cart" onclick="tocart('empire waist dip hem lace dress','5860.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--8">
+                <div class="icon-overlay"></div>
+                    <img src="juniors off shoulder floral lace dress.jpg" alt="Gallery image 8" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">off shoulder floral lace</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3260.00</p>
+                     <br><button class="cart" onclick="tocart('off shoulder floral lace','3260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--9">
+                <div class="icon-overlay"></div>
+                    <img src="laksmi dress poshmark vintage.jpg" alt="Gallery image 9" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">laksmi poshmark dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.2900.00</p>
+                     <br><button class="cart" onclick="tocart('laksmi poshmark dress','2900.00')">Add to Cart</button>
+                    </div>
+                </figure> 
+                <figure class="gallery__item--10">
+                <div class="icon-overlay"></div>
+                    <img src="teuta mini dress.jpg" alt="Gallery image 10" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">teuta mini dress</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.3800.00</p>
+                     <br><button class="cart" onclick="tocart('teuta mini dress','3800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--11">
+                <div class="icon-overlay"></div>
+                    <img src="summer women dress knee length bandage bodycon dress.jpg" alt="Gallery image 11" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">bandage bodycon dress</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.5090.00</p>
+                     <br><button class="cart" onclick="tocart('bandage bodycon dress','5090.00')" >Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--12">
+                <div class="icon-overlay"></div>
+                    <img src="Navy lace dip hem dress.jpg" alt="Gallery image 12" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">navy lace dress</h3>
+                    <p class="icon-text">Sizes : M,S<br>Price : Rs.4600.00</p>
+                     <br><button class="cart" onclick="tocart('avy lace dress','4600.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--13">
+                <div class="icon-overlay"></div>
+                    <img src="plus size criss cross dress.jpg" alt="Gallery image 13" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">criss cross red dress</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.4100.00</p>
+                     <br><button class="cart" onclick="tocart('Bcriss cross red dress','4100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--14">
+                <div class="icon-overlay"></div>
+                    <img src="ralph lauren purple theona cap sleeve dress.jpg" alt="Gallery image 14" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">ralph lauren cap sleeve</h3>
+                    <p class="icon-text">Sizes : XL,M,S<br>Price : Rs.3190.00</p>
+                     <br><button class="cart" onclick="tocart('ralph lauren cap sleeve','3190.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--15">
+                <div class="icon-overlay"></div>
+                    <img src="one shoulder knee lenth dress women autumn black scoop.jpg" alt="Gallery image 15" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">autumn black scoop</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.4860.00</p>
+                     <br><button class="cart" onclick="tocart('autumn black scoop','4860.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--16">
+                <div class="icon-overlay"></div>
+                    <img src="stacie maxi dress.jpg" alt="Gallery image 16" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">stacie maxi</h3>
+                    <p class="icon-text">Sizes :L,M<br>Price : Rs.3700.00</p>
+                     <br><button class="cart" onclick="tocart('stacie maxi','3700.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--17">
+                <div class="icon-overlay"></div>
+                    <img src="navy-blue-patchwork-lace-backless-v-neck-party-midi-dress.jpg" alt="Gallery image 17" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">navy blue patchwork lace</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.4100.00</p>
+                     <br><button class="cart" onclick="tocart('navy blue patchwork lace','4100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--18">
+                <div class="icon-overlay"></div>
+                    <img src="v neck ruched dress floral lace cocktail.jpg" alt="Gallery image 18" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">v neck floral lace</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.3800.00</p>
+                     <br><button class="cart" onclick="tocart('v neck floral lace','3800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--19">
+                <div class="icon-overlay"></div>
+                    <img src="Yellow simple dress.jpg" alt="Gallery image 19" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">yellow v neck dress</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L,M<br>Price : Rs.3250.00</p>
+                     <br><button class="cart" onclick="tocart('yellow v neck dress','3250.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--20">
+                <div class="icon-overlay"></div>
+                    <img src="vintage pin up dress lace blush pink.png" alt="Gallery image 20" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">vintage pin up lace pink</h3>
+                    <p class="icon-text">Sizes : L,M<br>Price : Rs.4060.00</p>
+                     <br><button class="cart" onclick="tocart('vintage pin up lace pink','4060.00')">Add to Cart</button>
+                    </div>
+                </figure>
+            </div>
+
+</div>
+
+<div id="formal" class="tabcontent">
+ <div class="gallery3">
+            
+                <figure class="gallery__item--1">
+                <div class="icon-overlay"></div>
+                    <img src="blouse.jpg" alt="Gallery image 1" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">purple office top</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.3100.00</p>
+                    <br><button class="cart" onclick="tocart('purple office top','3100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--2">
+                <div class="icon-overlay"></div>
+                    <img src="Classy casual belted vintage retro swing dress.jpg" alt="Gallery image 2" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">classy belted retro swing dress</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.4800.00</p>
+                                     <br><button class="cart" onclick="tocart('lassy belted retro swing dress','4800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--3">
+                <div class="icon-overlay"></div>
+                    <img src="ivy-you-blouse-lm-ch102960-jl18-1009-olijf-1-r6053.jpg" alt="Gallery image 3" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">huf and dee forest green formal</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.2900.00</p>
+                                     <br><button class="cart" onclick="tocart('huf and dee forest green formal','2900.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--4">
+                <div class="icon-overlay"></div>
+                    <img src="regular fit long sleeve.jpg" alt="Gallery image 4" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">regular fit long sleeve</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.4020.00</p>
+                                     <br><button class="cart" onclick="tocart('regular fit long sleeve','4020.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--5">
+                <div class="icon-overlay"></div>
+                    <img src="silk shirt full sleeve bow collar.jpg" alt="Gallery image 5" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">silk bow collar full sleeve</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.4560.00</p>
+                                     <br><button class="cart" onclick="tocart('silk bow collar full sleeve','4560.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--6">
+                <div class="icon-overlay"></div>
+                    <img src="solid o neck tshirt white.jpeg" alt="Gallery image 6" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">solid o neck white</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.2100.00</p>
+                                     <br><button class="cart" onclick="tocart('solid o neck white','2100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--7">
+                <div class="icon-overlay"></div>
+                    <img src="summer women dress knee length bandage bodycon dress.jpg" alt="Gallery image 7" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">bandage bodycon dress</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.5090.00</p>
+                                     <br><button class="cart " onclick="tocart('bandage bodycon dress','5090.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--8">
+                <div class="icon-overlay"></div>
+                    <img src="tie neck blouse.jpg" alt="Gallery image 8" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">tie neck blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.3970.00</p>
+                                     <br><button class="cart" onclick="tocart('tie neck blouse','3970.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--9">
+                <div class="icon-overlay"></div>
+                    <img src="vintage jageur purpl blouse.jpg" alt="Gallery image 9" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">vintage jageur purple blouse</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.3190.00</p>
+                                     <br><button class="cart" onclick="tocart('vintage jageur purple blouse','3190.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--10">
+                <div class="icon-overlay"></div>
+                    <img src="women-denim-shirt-500x500.jpeg" alt="Gallery image 10" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">half sleeve denim shirt</h3>
+                    <p class="icon-text">Sizes : XL,M<br>Price : Rs.4150.00</p>
+                                     <br><button class="cart" onclick="tocart('half sleeve denim shirt','4150.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--11">
+                <div class="icon-overlay"></div>
+                    <img src="Yellow simple dress.jpg" alt="Gallery image 11" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">yellow v neck dress</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L,M<br>Price : Rs.3250.00</p>
+                                     <br><button class="cart" onclick="tocart('yellow v neck dress','3250.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--12">
+                <div class="icon-overlay"></div>
+                    <img src="blouse ivy.png" alt="Gallery image 12" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">ivy blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.2260.00</p>
+                                     <br><button class="cart" onclick="tocart('ivy blouse','2260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--13">
+                <div class="icon-overlay"></div>
+                    <img src="formal ladies.jpg" alt="Gallery image 13" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">black red formal dress</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.4000.00</p>
+                                     <br><button class="cart" onclick="tocart('black red formal dress','4000.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--14">
+                <div class="icon-overlay"></div>
+                    <img src="jacket blazer slim fit.jpg" alt="Gallery image 14" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">jacket blazer slim fit</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.3240.00</p>
+                                     <br><button class="cart" onclick="tocart('icon-details fadeIn-bottom','3240.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--15">
+                <div class="icon-overlay"></div>
+                    <img src="plain blazer regular sleeve length.jpg" alt="Gallery image 15" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">regular sleeve plain blazer</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.4160.00</p>
+                                     <br><button class="cart" onclick="tocart('regular sleeve plain blazer','4160.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--16">
+                <div class="icon-overlay"></div>
+                    <img src="women-blazers-and-jackets-autumn-slim-ladies-blazers-office-work-wear-business-jacket-tunic-top-elegant-outwear-blazer-feminino.jpg" alt="Gallery image 16" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">autumn slim silk red</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.4790.00</p>
+                                     <br><button class="cart" onclick="tocart('autumn slim silk red','4790.00')">Add to Cart</button>
+                    </div>
+                </figure>
+
+            </div>
+
+</div>
+
+<div id="party" class="tabcontent">
+ <div class="gallery4">
+            
+                <figure class="gallery__item--1">
+                <div class="icon-overlay"></div>
+                    <img src="one shoulder knee lenth dress women autumn black scoop.jpg" alt="Gallery image 1" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">autumn black scoop</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.4860.00</p>
+                                     <br><button class="cart" onclick="tocart('autumn black scoop','4860.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--2">
+                <div class="icon-overlay"></div>
+                    <img src="alexander vauthier v neck draped yellow dress.jpg" alt="Gallery image 2" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">v neck draped yellow dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.5210.00</p>
+                                     <br><button class="cart" onclick="tocart('v neck draped yellow dress','5210.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--3">
+                <div class="icon-overlay"></div>
+                    <img src="cavalli long dress.jpg" alt="Gallery image 3" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">cavalli pink long dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.5180.00</p>
+                                     <br><button class="cart" onclick="tocart('cavalli pink long dress','5180.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--4">
+                <div class="icon-overlay"></div>
+                    <img src="classychiffon beaded one shoulder prom cocktail dress.jpg" alt="Gallery image 4" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">chiffon beaded one shoulder prom dress</h3>
+                    <p class="icon-text">Sizes : M<br>Price : Rs.8260.00</p>
+                                     <br><button class="cart" onclick="tocart('chiffon beaded one shoulder prom dress','8260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--5">
+                <div class="icon-overlay"></div>
+                    <img src="emarald green blouse.jpg" alt="Gallery image 5" class="gallery1__img">
+                  <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">emarald green blouse</h3>
+                    <p class="icon-text">Sizes : M,S<br>Price : Rs.3090.00</p>
+                                     <br><button class="cart" onclick="tocart('emarald green blouse','3090.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--6">
+                <div class="icon-overlay"></div>
+                    <img src="fairy couple off shpulder lace vintage part cocktail.jpg" alt="Gallery image 6" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">fairy off shoulder white vintage dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.2630.00</p>
+                                     <br><button class="cart" onclick="tocart('fairy off shoulder white vintage dress','2630.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--7">
+                <div class="icon-overlay"></div>
+                    <img src="juniors off shoulder floral lace dress.jpg" alt="Gallery image 7" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">off shoulder floral lace</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3260.00</p>
+                                     <br><button class="cart" onclick="tocart('off shoulder floral lace','3260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--8">
+             <div class="icon-overlay"></div>
+                    <img src="laksmi dress poshmark vintage.jpg" alt="Gallery image 8" class="gallery1__img"> 
+                    <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">laksmi poshmark dress</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.2900.00</p>           
+                                     <br><button class="cart" onclick="tocart('laksmi poshmark dress','2900.00')">Add to Cart</button>        
+                     </div>
+                </figure>
+                <figure class="gallery__item--9">
+                <div class="icon-overlay"></div>
+                    <img src="Navy lace dip hem dress.jpg" alt="Gallery image 9" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">navy lace dress</h3>
+                    <p class="icon-text">Sizes : M,S<br>Price : Rs.4600.00</p>
+                                     <br><button class="cart" onclick="tocart('navy lace dress','4600.00')">Add to Cart</button>
+
+                    </div>
+                </figure>
+                <figure class="gallery__item--10">
+                <div class="icon-overlay"></div>
+                    <img src="navy-blue-patchwork-lace-backless-v-neck-party-midi-dress.jpg" alt="Gallery image 10" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">navy blue patchwork lace</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.4100.00</p>
+                                     <br><button class="cart" onclick="tocart('navy blue patchwork lace','4100.00')">Add to Cart</button>
+                    </div>
+                
+                </figure>
+                <figure class="gallery__item--11">
+                <div class="icon-overlay"></div>
+                    <img src="one shoulder black red ombre promdress.jpg" alt="Gallery image 11" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">one shoulder red ombre promdress</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.5390.00</p>
+                                     <br><button class="cart" onclick="tocart('one shoulder red ombre promdress','5390.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--12">
+                <div class="icon-overlay"></div>
+                    <img src="peplum long sleeve blouse.jpg" alt="Gallery image 12" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">pepllum long sleeve blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.4130.00</p>
+                                     <br><button class="cart" onclick="tocart('pepllum long sleeve blouse','4130.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                 <figure class="gallery__item--13">
+                 <div class="icon-overlay"></div>
+                    <img src="plus size criss cross dress.jpg" alt="Gallery image 13" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">criss cross red dress</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.4100.00</p>
+                                     <br><button class="cart" onclick="tocart('criss cross red dress','4100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--14">
+                <div class="icon-overlay"></div>
+                    <img src="ralph lauren purple theona cap sleeve dress.jpg" alt="Gallery image 14" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">ralph lauren cap sleeve</h3>
+                    <p class="icon-text">Sizes : XL,M,S<br>Price : Rs.3190.00</p>
+                                     <br><button class="cart" onclick="tocart('ralph lauren cap sleeve','3190.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--15">
+                 <div class="icon-overlay"></div>
+                    <img src="solid colour women midi dress with sash.jpg" alt="Gallery image 15" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">solid color midi dress</h3>
+                    <p class="icon-text">Sizes : XL,L,,S<br>Price : Rs.3910.00</p>
+                                     <br><button class="cart" onclick="tocart('solid color midi dress','3910.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--16">
+                <div class="icon-overlay"></div>
+                    <img src="stacie maxi dress.jpg" alt="Gallery image 16" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">stacie maxi</h3>
+                    <p class="icon-text">Sizes :L,M<br>Price : Rs.3700.00</p>
+                                     <br><button class="cart" onclick="tocart('stacie maxi','3700.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--17">
+                <div class="icon-overlay"></div>
+                     <img src="teuta mini dress.jpg" alt="Gallery image 17" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">teuta mini dress</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.3800.00</p>
+                                     <br><button class="cart" onclick="tocart('teuta mini dress','3800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--18">
+                <div class="icon-overlay"></div>
+                    <img src="vintage pin up dress lace blush pink.png" alt="Gallery image 18" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">vintage pin up lace pink</h3>
+                    <p class="icon-text">Sizes : L,M<br>Price : Rs.4060.00</p>
+                                     <br><button class="cart" onclick="tocart('vintage pin up lace pink','4060.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--19">
+                <div class="icon-overlay"></div>
+                    <img src="v neck ruched dress floral lace cocktail.jpg" alt="Gallery image 19" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">v neck floral lace</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.3800.00</p>
+                                     <br><button class="cart" onclick="tocart('v neck floral lace','3800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--20">
+                <div class="icon-overlay"></div>
+                    <img src="v neck open back chiffon long evening gown.jpg" alt="Gallery image 20" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">v neck chiffon evening gown</h3>
+                    <p class="icon-text">Sizes : L,M<br>Price : Rs.7150.00</p>
+                                     <br><button class="cart" onclick="tocart('v neck chiffon evening gown','7150.00')">Add to Cart</button>
+                    </div>
+                </figure>
+</div>
+
+</div>
+<div id="tops" class="tabcontent">
+   <div class="gallery5">
+            
+                <figure class="gallery__item--1">
+                <div class="icon-overlay"></div>
+                    <img src="bat sleeve loose casual ladies.jpg" alt="Gallery image 1" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">Bat Sleeve Blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.3500.00</p>
+                                     <br><button class="cart" onclick="tocart('Bat Sleeve Blouse','3500.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--2">
+                <div class="icon-overlay"></div>
+                    <img src="british fencing lifestyle .jpg" alt="Gallery image 2" class="gallery1__img">
+                    <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">British Fencing Style T-Shirt</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3260.00</p>
+                                     <br><button class="cart" onclick="tocart('British Fencing Style T-Shirt','3260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--3">
+               <div class="icon-overlay"></div>
+                    <img src="casual v neck vintage white blue striped shirt.jpg" alt="Gallery image 3" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">V neck vintage Striped shirt</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.4800.00</p>
+                                     <br><button class="cart" onclick="tocart('V neck vintage Striped shirt','4800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--4">
+                <div class="icon-overlay"></div>
+                    <img src="frilled floral cold shoulder bliuse.jpg" alt="Gallery image 4" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">Frilled floral off shoulder blouse</h3>
+                    <p class="icon-text">Sizes : L,M,S<br>Price : Rs.3300.00</p>
+                                     <br><button class="cart" onclick="tocart('Frilled floral off shoulder blouse','3300.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--5">
+                <div class="icon-overlay"></div>
+                    <img src="summer casual cropped sleeve.jpg" alt="Gallery image 5" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">summer cropped sleeve denim top</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.3800.00</p>
+                                     <br><button class="cart" onclick="tocart('summer cropped sleeve denim top','3800.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--6">
+                <div class="icon-overlay"></div>
+                    <img src="gentle gym tshirt.jpg" alt="Gallery image 6" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">light blue gym tshirt</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.2060.00</p>
+                                     <br><button class="cart" onclick="tocart('light blue gym tshirt','2060.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--7">
+                <div class="icon-overlay"></div>
+                    <img src="jules floral blouse.jpg" alt="Gallery image 7" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">Floral Blouse</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs3100.00</p>
+                                     <br><button class="cart" onclick="tocart('Floral Blouse','3100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--8">
+               <div class="icon-overlay"></div>
+                    <img src="pasadena polo shirt forest green.jpg" alt="Gallery image 8" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">pasadena polo tshirt</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L,M<br>Price : Rs.2900.00</p>
+                                     <br><button class="cart" onclick="tocart('pasadena polo tshirt','2900.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--9">
+                <div class="icon-overlay"></div>
+                    <img src="pink round neck tshirt.jpg" alt="Gallery image 9" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">pink round neck tshirt</h3>
+                    <p class="icon-text">Sizes :L,M<br>Price : Rs.1650.00</p>
+                                     <br><button class="cart" onclick="tocart('pink round neck tshirt','1650.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--10">
+                <div class="icon-overlay"></div>
+                    <img src="Polo shirt navy blue.jpg" alt="Gallery image 10" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">polo navy blue tshirt</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.2100.00</p>
+                                     <br><button class="cart" onclick="tocart('polo navy blue tshirt','2100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--11">
+                 <div class="icon-overlay"></div>
+                    <img src="blouse.jpg" alt="Gallery image 11" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">purple office top</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.3100.00</p>
+                                     <br><button class="cart" onclick="tocart('purple office top','3100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--12">
+                <div class="icon-overlay"></div>
+                    <img src="emarald green blouse.jpg" alt="Gallery image 12" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                  <h3 class="icon-title">emarald green blouse</h3>
+                    <p class="icon-text">Sizes : M,S<br>Price : Rs.3090.00</p>     
+                                     <br><button class="cart" onclick="tocart('emarald green blouse','3090.00')">Add to Cart</button>               
+                    </div>
+                </figure>
+                <figure class="gallery__item--13">
+                <div class="icon-overlay"></div>
+                    <img src="ivy-you-blouse-lm-ch102960-jl18-1009-olijf-1-r6053.jpg" alt="Gallery image 13" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">huf and dee forest green formal</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.2900.00</p>
+                                     <br><button class="cart" onclick="tocart('huf and dee forest green formal','2900.00')">Add to Cart</button>
+
+                    </div>
+                </figure>
+                <figure class="gallery__item--14">
+                <div class="icon-overlay"></div>
+                    <img src="peplum long sleeve blouse.jpg" alt="Gallery image 14" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">pepllum long sleeve blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.4130.00</p> 
+                                     <br><button class="cart" onclick="tocart('pepllum long sleeve blouse','4130.00')">Add to Cart</button>                   
+                    </div>
+                </figure>
+                <figure class="gallery__item--15">
+                <div class="icon-overlay"></div>
+                    <img src="regular fit long sleeve.jpg" alt="Gallery image 15" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">regular fit long sleeve</h3>
+                    <p class="icon-text">Sizes : XL,L,M,S<br>Price : Rs.4020.00</p>
+                                     <br><button class="cart" onclick="tocart('Bregular fit long sleeve','4020.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--16">
+                <div class="icon-overlay"></div>
+                    <img src="silk shirt full sleeve bow collar.jpg" alt="Gallery image 16" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">silk bow collar full sleeve</h3>
+                    <p class="icon-text">Sizes : XXL,XL,L<br>Price : Rs.4560.00</p>
+                                     <br><button class="cart" onclick="tocart('silk bow collar full sleeve','4560.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--17">
+                <div class="icon-overlay"></div>
+                    <img src="solid o neck tshirt white.jpeg" alt="Gallery image 17" class="gallery1__img">
+                    <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">solid o neck white</h3>
+                    <p class="icon-text">Sizes : XL,L,S<br>Price : Rs.2100.00</p>
+                                     <br><button class="cart" onclick="tocart('solid o neck white','2100.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--18">
+                <div class="icon-overlay"></div>
+                    <img src="tie neck blouse.jpg" alt="Gallery image 18" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                   <h3 class="icon-title">tie neck blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.3970.00</p>
+                                     <br><button class="cart" onclick="tocart('tie neck blouse','3970.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--19">
+                <div class="icon-overlay"></div>
+                    <img src="vintage jageur purpl blouse.jpg" alt="Gallery image 19" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                     <h3 class="icon-title">vintage jageur purple blouse</h3>
+                    <p class="icon-text">Sizes : XL,L<br>Price : Rs.3190.00</p>
+                                     <br><button class="cart" onclick="tocart('vintage jageur purple blouse','3190.00')">Add to Cart</button>
+                    </div>
+                </figure>
+                <figure class="gallery__item--20">
+                <div class="icon-overlay"></div>
+                    <img src="blouse ivy.png" alt="Gallery image 20" class="gallery1__img">
+                     <div class="icon-details fadeIn-bottom">
+                    <h3 class="icon-title">ivy blouse</h3>
+                    <p class="icon-text">Sizes : XL,L,M<br>Price : Rs.2260.00</p>
+                                     <br><button class="cart" onclick="tocart('ivy blouse','2260.00')">Add to Cart</button>
+                    </div>
+                </figure>
+</div>
+</div>
+</div>
+
+
+<form class="myclass">
+<fieldset>
+<center><h1><strong>Billing Information</strong></h1></center>
+
+<fieldset>
+<legend><h3><i class="fa fa-shopping-cart" style="font-size:36px"></i> Items in Cart</h3></legend>
+
+<div class="row">
+
+<label>Item 1:</label>
+<input type="text" style="font-size:16pt;height:25px;width:280px;"  id="textbox1" size="40" disabled>&nbsp;
+ <label>Price Per Item:</label> Rs.
+ <input type="text" id="price1" style="font-size:16pt;height:25px;width:120px;text-align:center;"  size="40" disabled>&nbsp;
+<label>Size:</label>
+<select name="size" style="font-size:16pt;height:25px;width:100px;" id="size1">
+<option value="xxl">XXL</option>
+<option value="xl">XL</option>
+<option value="large">L</option> 
+<option value="medium">M</option> 
+<option value="small">S</option> 
+ </select>&nbsp;
+<label>Quantity:</label>
+<select name="quantity" onchange="calculatetotal()" style="font-size:16pt;height:25px;width:100px;" id="quantity1">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+ </select>&nbsp;
+
+ 
+</div>
+
+<div class="row">
+<label>Item 2:</label>
+<input type="text" style="font-size:16pt;height:25px;width:280px;" id="textbox2"  size="40" disabled>&nbsp;
+  <label>Price Per Item:</label>  Rs.
+   <input type="text" id="price2" style="font-size:16pt;height:25px;width:120px;text-align:center;"  size="40" disabled>&nbsp;
+<label>Size:</label>
+<select name="size" style="font-size:16pt;height:25px;width:100px;" id="size2" >
+<option value="xxl">XXL</option>
+<option value="xl">XL</option>
+<option value="large">L</option> 
+<option value="medium">M</option> 
+<option value="small">S</option> 
+ </select>&nbsp;
+<label>Quantity:</label>
+<select name="quantity" onchange="calculatetotal()" style="font-size:16pt;height:25px;width:100px;" id="quantity2">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+ </select>&nbsp;
+
+</div>
+
+<div class="row">
+<label>Item 3:</label>
+<input type="text" style="font-size:16pt;height:25px;width:280px;"  id="textbox3" size="40" disabled>&nbsp;
+  <label>Price Per Item:</label>  Rs.
+   <input type="text" id="price3" style="font-size:16pt;height:25px;width:120px;text-align:center;"  size="40" disabled>&nbsp;
+<label>Size:</label>
+<select name="size" style="font-size:16pt;height:25px;width:100px;" id="size3" >
+<option value="xxl">XXL</option>
+<option value="xl">XL</option>
+<option value="large">L</option> 
+<option value="medium">M</option> 
+<option value="small">S</option> 
+ </select>&nbsp;
+<label>Quantity:</label>
+<select name="quantity" onchange="calculatetotal()" style="font-size:16pt;height:25px;width:100px;" id="quantity3">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+ </select>&nbsp;
+
+   <button type='button' class="emptycart" onclick="emptycart()">Empty Cart</button>
+</div>
+
+<div class="row">
+<label>Item 4:</label>
+<input type="text" style="font-size:16pt;height:25px;width:280px;"  id="textbox4" size="40" disabled>&nbsp;
+  <label>Price Per Item:</label> Rs.
+   <input type="text" id="price4" style="font-size:16pt;height:25px;width:120px;text-align:center;"  size="40" disabled >&nbsp;
+<label>Size:</label>
+<select name="size" style="font-size:16pt;height:25px;width:100px;"  id="size4">
+<option value="xxl">XXL</option>
+<option value="xl">XL</option>
+<option value="large">L</option> 
+<option value="medium">M</option> 
+<option value="small">S</option> 
+ </select>&nbsp;
+<label>Quantity:</label>
+<select name="quantity" onchange="calculatetotal()" style="font-size:16pt;height:25px;width:100px;" id="quantity4">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+ </select>&nbsp;
+</div>
+<div class="row">
+   <label>Total amount:Rs.</label><input type="text" id="total" style="font-size:16pt;height:25px;width:120px;text-align:center;" disabled>
+   </div>
+</form>
+</fieldset>
+
+
+<br>
+<form onsubmit="order()">
+<fieldset>
+<legend><h3><i class="fa fa-user-circle-o" style="font-size:36px"></i> Personal Info</h3></legend>
+<div class="row">
+<div class="col1"><label>Name:</label></div>
+<div class="col2"><input type="text" style="font-size:12pt;height:25px;width:280px;" id="fname" placeholder="First Name" size="40" ></div>
+<div class="col3"><label>Email:</label></div>
+<div class="col4"><input type="email" style="font-size:12pt;height:25px;width:280px;" placeholder="E-mail" id="email" size="40" ><br></div>
+</div>
+
+<div class="row">
+<div class="col1"><label>Surname:</label></div>
+<div class="col2"><input type="text" style="font-size:12pt;height:25px;width:280px;" id="sname" name="Surname" placeholder="Your surname" size="40" ></div>
+<div class="col3"><label>Address:</label></div>
+<div class="col4"><input type="text" style="font-size:12pt;height:25px;width:280px;" placeholder="Address" id="address" size="40" ></div>
+</div>
+
+<div class="row">  
+<div class="col1"><label>ZIP:</label></div>
+<div class="col2"><input type="text" style="font-size:12pt;height:25px;width:280px;" placeholder="Zip code" name="zip" size="40"></div>
+<div class="col3"><label>Tel. No:</label></div>
+<div class="col4"><input type="text" style="font-size:12pt;height:25px;width:280px;" placeholder="Telephone" name="tel" size="40" ></div>
+</div>
+
+<div class="row">  
+<div class="col1"><label>*Payment Method:</label></div> 
+<div class="col2">
+<label>Accepted Cards:</label>
+            <div class="cards">
+              <i class="fa fa-cc-visa" style="color:navy;font-size:36px;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;font-size:36px;"></i>
+              <i class="fa fa-cc-mastercard" style="color;font-size:36px;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;font-size:36px;"></i>
+            </div>
+            </div>
+<br> 
+<input type="radio" name="payment method" required><label>&nbsp;PayPal</label> &nbsp;
+<input type="radio" name="payment method"><label>&nbsp;Credit Card</label>&nbsp;
+<input type="radio" name="payment method"><label>&nbsp;Debit Card</label>
+
+</div> 
+
+<div class="row"> 
+<div class="col1"><label>Card Holder:</label></div>
+<div class="col2"><input type="text" style="font-size:16pt;height:25px;width:280px;" id="holder" size="40" ></div>
+</div>
+
+<div class="row"> 
+<div class="col1"><label>Card Number:</label></div>
+<div class="col2"><input type="text" style="font-size:16pt;height:25px;width:280px;" id="cnumber" size="40"></div>
+</div>
+<div class="row">
+<div class="col1"><label>Other requests:</label></div>
+<div class="col2"><textarea name="Comments" rows="10" cols="80"></textarea></div>
+</div>
+  
+</fieldset>
+
+
+<div class="row"> 
+<input type="checkbox" name="condition" id="condition" required>
+<label>*Agree to Terms and Conditions</label></div>
+
+<div class="row"> 
+<div class="col1"></div>
+<div class="col2"></div>
+<div class="col3"></div>
+<div class="col4"></div>
+<input type="submit"  value="Place Order" > 
+<input type="reset"  value="Reset"> 
+</div>
+
+
+</fieldset>
+</form>
+
+
+
+<script>
+
+
+  
+function openGallery(evt, category) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(category).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+ 
+
+</script>
+
+
+<div id="right-bottom"><span style="font-size:20px;cursor:pointer;position:fixed;bottom:20px;right:20px;color:#fbfae2;" onclick="openNav()">&#9776; Page Editor</span>
+</div>
+
+
+
+</div>
+<div  class="footer">
+        <br>
+        <span><center>CONNECT WITH US:<font size="5px">
+        <a href="#" id="social" class="fa fa-facebook"></a>
+        <a href="#" id="social" class="fa fa-twitter"></a>
+        <a href="#" id="social" class="fa fa-google"></a>
+        <a href="#" id="social" class="fa fa-linkedin"></a>
+        <a href="#" id="social" class="fa fa-youtube"></a></font></center></span>
+       <span><br>
+        Need Help?<br>Call Us:<br>0765408855<br><br>
+        General Enquiries:<br>elegancesss@hotmail.com</span>
+        <span><br><br>
+        Get updates directly to your inbox:
+        <input type="text" style="width:200px;" name="signup" ><input type="button" class="submit" value="SignUp"><br><br>
+    
+        &copy; 2020 ELEGANCE COMPANY.ALL RIGHTS RESERVED.<br><br>
+        Sitemap  |   Private Policy  |  Terms &#38; Conditions
+        </span>
+
+     
+</div>
+</body>
+</html>
+    
